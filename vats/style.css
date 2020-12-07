@@ -1,0 +1,62 @@
+.main {
+  font-family: "Overpass Mono" monospace;
+  font-size: 10pt;
+  line-height: .8;
+}
+.stanzabox {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: right;
+}
+.menu {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-size: 8pt;
+  line-height: 1.5;
+}
+.searchbox {
+  border: solid lightgray 1px;
+  border-radius: 10px;
+  width: 80%;
+  height: 1em;
+  padding: .5em 5px .5em 5px;
+  margin: 0 auto;
+}
+.searchtext {
+  width: 100%;
+  margin: 0 auto;
+}
+.suggestionbox {
+  border: solid lightgray 1px;
+  border-radius: 10px;
+  padding: 2px;
+  width: 80%;
+  margin: 0 0;
+  margin-top: 10px;
+  background: white;
+  opacity: 0.5;
+}
+.suggestion {
+  font-weight: bold;
+}
+h1 {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+.gblue { color: #4285f4; }
+.gred { color: #db4437; }
+.gyellow { color: #f4b400; }
+.ggreen { color: #0f9d58; }
+
+.selected {
+  font-weight: bold;
+  font-size: 10pt;
+}
+.disabled {
+  color: gray;
+}
