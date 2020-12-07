@@ -1,6 +1,6 @@
 .main {
   font-family: "Overpass Mono" monospace;
-  font-size: 10pt;
+  font-size: 12pt;
   line-height: .8;
 }
 .stanzabox {
@@ -14,7 +14,7 @@
   width: 80%;
   margin: 0 auto;
   margin-bottom: 10px;
-  font-size: 8pt;
+  font-size: 12pt;
   line-height: 1.5;
 }
 .searchbox {
@@ -55,7 +55,7 @@ a {
 
 .selected {
   font-weight: bold;
-  font-size: 10pt;
+  font-size: 12pt;
 }
 .disabled {
   color: gray;
