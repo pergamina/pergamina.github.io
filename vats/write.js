@@ -12,7 +12,7 @@ function displayMenu(selected, enabled) {
   clearElem(elem);
   for (let i = 0; i < NAMES.length; i++) {
     let name = NAMES[i];
-    if (i === NAMES.length / 2) {
+    if (i !== 0 && i % 4 === 0) {
       elem.appendChild(BR());
     } else if (i !== 0) {
       elem.appendChild(TEXT(' | '));
