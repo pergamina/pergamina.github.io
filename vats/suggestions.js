@@ -11544,7 +11544,7 @@ let SUGGESTIONS = [
 ];
 
 SUGGESTIONS.sort(function (x, y) {
-  return x.localeCompare(y);
+  return strcmp(x, y);
 });
 
 function normalize(str) {
