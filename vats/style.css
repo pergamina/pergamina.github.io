@@ -1,5 +1,6 @@
 body {
   font-size: 20pt;
+  overflow-y: scroll;
 }
 .main {
   font-family: "Overpass Mono" monospace;
@@ -32,7 +33,7 @@ body {
 .searchbox {
   width: 100%;
   /*border: solid lightgray 1px;*/
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   height: 1em;
   padding: .5em;
   margin: 0 auto;
@@ -43,7 +44,7 @@ body {
 }
 .suggestionbox {
   /*border: solid lightgray 1px;*/
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   width: 80%;
   margin: 0 0;
   padding-left: .5em;
