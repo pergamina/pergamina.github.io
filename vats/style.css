@@ -16,13 +16,24 @@ body {
   margin: 0 auto;
   margin-bottom: 10px;
   line-height: 1.5;
+  text-align: justify;
+}
+.menu table {
+  width: 100%;
+  text-align: center;
+}
+.searchsuggestionbox {
+  width: 80%;
+  height: 1.5em;
+  margin: 0 auto;
+  padding: 0;
 }
 .searchbox {
+  width: 100%;
   border: solid lightgray 1px;
   border-radius: 10px;
-  width: 80%;
   height: 1em;
-  padding: .5em 5px .5em 5px;
+  padding: .5em;
   margin: 0 auto;
 }
 .searchtext {
@@ -32,10 +43,8 @@ body {
 .suggestionbox {
   border: solid lightgray 1px;
   border-radius: 10px;
-  padding: 2px;
   width: 80%;
   margin: 0 0;
-  margin-top: 10px;
   background: white;
   opacity: 0.5;
 }
@@ -58,4 +67,7 @@ a {
 }
 .disabled {
   color: gray;
+}
+.space {
+  padding: 20px;
 }

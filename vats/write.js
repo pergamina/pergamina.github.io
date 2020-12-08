@@ -10,22 +10,33 @@ function main() {
 function displayMenu(selected, enabled) {
   let elem = document.getElementById("menu");
   clearElem(elem);
-  for (let i = 0; i < NAMES.length; i++) {
-    let name = NAMES[i];
-    if (i !== 0 && i % 4 === 0) {
-      elem.appendChild(BR());
-    } else if (i !== 0) {
-      elem.appendChild(TEXT(' | '));
+
+  let table = document.createElement("table");
+  let row_size = 4;
+  for (let i = 0; i < NAMES.length; i += row_size) {
+    let row = document.createElement("tr");
+    for (let j = 0; j < row_size; j++) {
+      let t = i + j;
+      let name = NAMES[t];
+      //if (j !== 0 && i % row_size === 0) {
+      //  elem.appendChild(BR());
+      //} else if (i !== 0) {
+      //  elem.appendChild(SPAN1('space', TEXT(' ')));
+      //}
+      let cell = document.createElement('td');
+      if (selected === name) {
+        cell.appendChild(SPAN1('selected', TEXT(name)));
+      } else if (enabled) {
+        cell.appendChild(A_onclick(TEXT(name), function () {
+          start(name);
+        }));
+      } else {
+        cell.appendChild(SPAN1('disabled', TEXT(name)));
+      }
+      row.appendChild(cell);
     }
-    if (selected === name) {
-      elem.appendChild(SPAN1('selected', TEXT(name)));
-    } else if (enabled) {
-      elem.appendChild(A_onclick(TEXT(name), function () {
-        start(name);
-      }));
-    } else {
-      elem.appendChild(SPAN1('disabled', TEXT(name)));
-    }
+    table.appendChild(row);
+    elem.appendChild(table);
   }
 }
 
