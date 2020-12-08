@@ -18,11 +18,6 @@ function displayMenu(selected, enabled) {
     for (let j = 0; j < row_size; j++) {
       let t = i + j;
       let name = NAMES[t];
-      //if (j !== 0 && i % row_size === 0) {
-      //  elem.appendChild(BR());
-      //} else if (i !== 0) {
-      //  elem.appendChild(SPAN1('space', TEXT(' ')));
-      //}
       let cell = document.createElement('td');
       if (selected === name) {
         cell.appendChild(SPAN1('selected', TEXT(name)));
@@ -78,11 +73,11 @@ function writeVerse(name, prefix, suffix, verses) {
   clearElem(elem);
   elem.appendChild(TEXT(prefix));
   if (suffix === "") {
+    let stanzabox = document.getElementById("stanzabox");
+    stanzabox.appendChild(A(P1(TEXT(prefix)), 'https://www.google.com/search?q=' + prefix));
     hideSuggestion();
     setTimeout(
       function() {
-        let elem = document.getElementById("stanzabox");
-        elem.appendChild(A(P1(TEXT(prefix)), 'https://www.google.com/search?q=' + prefix));
         write(name, verses);
       },
       AFTER_VERSE_DELAY
