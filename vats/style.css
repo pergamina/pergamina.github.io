@@ -31,7 +31,7 @@ body {
 }
 .searchbox {
   width: 100%;
-  border: solid lightgray 1px;
+  /*border: solid lightgray 1px;*/
   border-radius: 10px;
   height: 1em;
   padding: .5em;
@@ -42,7 +42,7 @@ body {
   margin: 0 auto;
 }
 .suggestionbox {
-  border: solid lightgray 1px;
+  /*border: solid lightgray 1px;*/
   border-radius: 10px;
   width: 80%;
   margin: 0 0;
