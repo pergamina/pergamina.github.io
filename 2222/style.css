@@ -1,0 +1,75 @@
+body {
+  font-size: 12pt;
+  overflow-y: scroll;
+  font-family: "Overpass Mono" monospace;
+  background: black;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#menu {
+  font-size: 18pt;
+  color: #e0e0e0;
+}
+#menu a {
+  text-decoration: underline;
+  color: white;
+}
+.frame {
+  display: block;
+  float: left;
+  padding: 1em;
+  font-size: 16pt;
+}
+
+.col0 { background: #b23535 }
+.col1 { background: #b28035 }
+.col2 { background: #99b235 }
+.col3 { background: #4eb235 }
+.col4 { background: #35b267 }
+.col5 { background: #35b2b2 }
+.col6 { background: #3567b2 }
+.col7 { background: #4e35b2 }
+.col8 { background: #9935b2 }
+.col9 { background: #b23580 }
+
+h1 {
+  font-size: 16pt;
+}
+
+.frame {
+  float: left;
+  width: 80%;
+  text-align: left;
+}
+
+.text {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.canvas {
+  display: block;
+  float: right;
+  width: 50%;
+  padding-top: 40%;
+  position: relative;
+}
+
+.innercanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.box {
+  margin: 0 auto;
+}
+
