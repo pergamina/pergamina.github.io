@@ -1,5 +1,5 @@
 let PARTS = [
-  ["0 Buenos Aires",
+  ["Buenos Aires",
     [
     "buenos aires'en",
     "zhameante el sol saliendo,",
@@ -26,7 +26,7 @@ let PARTS = [
     "y sekan su de sed hinxada lengua."
 	  ]
   ],
-  ["1 Satélite joviano",
+  ["Satélite joviano",
     [
     "ionizada la atmósfera",
     "del inhóspito 屁股[pìgu] del universo",
@@ -53,7 +53,7 @@ let PARTS = [
     "y someter los pueblos ekstranjeros."
 	  ]
   ],
-  ["2 Suburbio de Tokio",
+  ["Suburbio de Tokio",
     [
     "asesinato krudo de las ninias",
     "la alfombra'sobre zhacen desmembradas",
@@ -80,7 +80,7 @@ let PARTS = [
     "la kara atrás de nuestra propia máskara."
 	  ]
   ],
-  ["3 Av. General José de San Martín",
+  ["Av. General José de San Martín",
     [
     "los dados ke arrojó el universo",
     "designaron ke duerma a la intemperie",
@@ -107,7 +107,7 @@ let PARTS = [
     "y el resplandor ke el korazón permea."
 	  ]
   ],
-  ["4 Hazhazgo arkeológiko",
+  ["Hazhazgo arkeológiko",
     [
     "murió la abuela.",
     "la kara kieta'kon la sepultaron,",
@@ -134,7 +134,7 @@ let PARTS = [
     "moran las lápidas mohosas'bajo."
 	  ]
   ],
-  ["5 Afrodita de políkromo trono",
+  ["Afrodita de políkromo trono",
     [
     "azher sonié kontigo y el suenio'en",
     "me xupabas la konxa y los testíkulos,",
@@ -161,7 +161,7 @@ let PARTS = [
     "y tengo ke planxar las kamisas."
 	  ]
   ],
-  ["6 La lexuza (hyéroglyphe G17)",
+  ["La lexuza (hyéroglyphe G17)",
     [
     "los estigmas de la kruz anksata'kon",
     "máskara funeraria del faraón",
@@ -188,7 +188,7 @@ let PARTS = [
     "tu kara embalsamada hace milenios."
 	  ]
   ],
-  ["7 Esbozo del elefante blanko",
+  ["Esbozo del elefante blanko",
     [
     "la bokanada de humo zhenándoté el abdomen",
     "te devolvió memorias ekstraviadas.",
@@ -215,7 +215,7 @@ let PARTS = [
     "bajé los brazos y acepté mi suerte."
 	  ]
   ],
-  ["8 Despertar",
+  ["Despertar",
     [
     "¿kuál es el límite de lo enunciable?",
     "¿de kuáles kosas no es posible hablar?",
@@ -242,7 +242,7 @@ let PARTS = [
     "y sufriré todos los sufrimientos?"
 	  ]
   ],
-  ["9 Blitzkrieg",
+  ["Blitzkrieg",
     [
     "la 战争[zhànzhēng]'antes kosexamos papas",
     "y un día se zhevaron a mi hermano.",

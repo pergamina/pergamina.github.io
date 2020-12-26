@@ -17,7 +17,7 @@ class Writer {
     for (let part of this._parts) {
       this._status.push(0);
       let text = DIV('text', []);
-      let canvas = DIV('canvas', [TEXT('xau')]);
+      let canvas = DIV('canvas', []);
       let frame = DIV('frame', [H1(TEXT(part[0])), text, canvas]);
       frame.style.display = 'none';
       body.appendChild(frame);
@@ -44,7 +44,7 @@ class Writer {
         menu.appendChild(A_onclick(TEXT(title), function () {
           self._current = ii;
           self.displayCurrentFrame();
-          self.write();
+          self.startWriting();
           document.body.className = 'col' + j;
         }));
       } else {
@@ -59,6 +59,12 @@ class Writer {
       frame.style.display = 'none';
     }
     this._frames[this._current].style.display = '';
+  }
+
+  startWriting() {
+    let i = this._current;
+    clearElem(this._texts[i]);
+    this.write();
   }
 
   write() {
