@@ -1,4 +1,77 @@
 
+
+
+let SYMBOLS = {
+  "h": 0.00,
+  "u": 0.01,
+  "g": 0.03,
+  "n": 0.04,
+  "话": 0.06,
+  "9": 0.07,
+  "m": 0.09,
+  "c": 0.10,
+  "莲": 0.12,
+  "e": 0.13,
+  "x": 0.15,
+  ".": 0.16,
+  "z": 0.18,
+  "[": 0.19,
+  "ü": 0.21,
+  "r": 0.22,
+  " ": 0.24,
+  "'": 0.25,
+  "0": 0.26,
+  "a": 0.28,
+  "]": 0.29,
+  "i": 0.31,
+  "l": 0.32,
+  "\"": 0.34,
+  "4": 0.35,
+  "ì": 0.37,
+  "k": 0.38,
+  "ē": 0.40,
+  "à": 0.41,
+  "í": 0.43,
+  "o": 0.44,
+  "2": 0.46,
+  "é": 0.47,
+  "v": 0.49,
+  "8": 0.50,
+  ",": 0.51,
+  "f": 0.53,
+  "¿": 0.54,
+  "股": 0.56,
+  "花": 0.57,
+  "t": 0.59,
+  "通": 0.60,
+  "战": 0.62,
+  "ú": 0.63,
+  "争": 0.65,
+  "d": 0.66,
+  ")": 0.68,
+  "ǔ": 0.69,
+  "屁": 0.71,
+  "ā": 0.72,
+  "b": 0.74,
+  "j": 0.75,
+  "ō": 0.76,
+  "5": 0.78,
+  "(": 0.79,
+  "3": 0.81,
+  "7": 0.82,
+  "á": 0.84,
+  "普": 0.85,
+  ":": 0.87,
+  "-": 0.88,
+  "s": 0.90,
+  "ó": 0.91,
+  "p": 0.93,
+  "y": 0.94,
+  "?": 0.96,
+  "6": 0.97,
+  "1": 0.99
+};
+
 function evalCmd(full, cmd, elem) {
   clearElem(elem);
   if (full.length === cmd.length) return;
@@ -6,13 +79,24 @@ function evalCmd(full, cmd, elem) {
   elem.appendChild(newDiv);
 }
 
+function isVowel(x) {
+  return x === 'a'
+      || x === 'e'
+      || x === 'i'
+      || x === 'o'
+      || x === 'u';
+}
+
 function buildElem(full, cmd, i, depth) {
   if (i === 0 || depth > 2 + 3 * (full.length % 5)) {
     let box = DIV('box', []);
+    //box.style.border += ' solid white 2px';
     return box;
   }
 
   let l = (cmd.length % 2 === 0) ? cmd[i - 1] : cmd[cmd.length - i - 1];
+  let p = (l in SYMBOLS) ? SYMBOLS[l] : 0.5;
+  let rad = (full.length % 3) * Math.floor(p * 20);
   let box = DIV('box', []);
   box.style.border = 'solid white 2px';
   if (l === 'a') {
