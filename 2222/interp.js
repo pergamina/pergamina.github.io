@@ -13,8 +13,6 @@ function buildElem(full, cmd, i, depth) {
   }
 
   let l = (cmd.length % 2 === 0) ? cmd[i - 1] : cmd[cmd.length - i - 1];
-  let p = (l in SYMBOLS) ? SYMBOLS[l] : 0.5;
-  let rad = (full.length % 3) * Math.floor(p * 20);
   let box = DIV('box', []);
   box.style.border = 'solid white 2px';
   if (l === 'a') {
