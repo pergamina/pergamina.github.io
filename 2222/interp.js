@@ -6,14 +6,6 @@ function evalCmd(full, cmd, elem) {
   elem.appendChild(newDiv);
 }
 
-function isVowel(x) {
-  return x === 'a'
-      || x === 'e'
-      || x === 'i'
-      || x === 'o'
-      || x === 'u';
-}
-
 function buildElem(full, cmd, i, depth) {
   if (i === 0 || depth > 2 + 3 * (full.length % 5)) {
     let box = DIV('box', []);
