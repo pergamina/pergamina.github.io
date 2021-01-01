@@ -58,7 +58,7 @@ function write(name, verses) {
     setTimeout(
       function() {
         let elem = document.getElementById("stanzabox");
-        elem.appendChild(BR());
+        elem.insertBefore(BR(), elem.firstChild);
         write(name, verses);
       },
       AFTER_STANZA_DELAY
@@ -74,7 +74,7 @@ function writeVerse(name, prefix, suffix, verses) {
   elem.appendChild(TEXT(prefix));
   if (suffix === "") {
     let stanzabox = document.getElementById("stanzabox");
-    stanzabox.appendChild(A(P1(TEXT(prefix)), 'https://www.google.com/search?q=' + prefix));
+    stanzabox.insertBefore(A(P1(TEXT(prefix)), 'https://www.google.com/search?q=' + prefix), stanzabox.firstChild);
     hideSuggestion();
     setTimeout(
       function() {
