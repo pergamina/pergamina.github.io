@@ -39,8 +39,8 @@ class Writer {
       let title = j + j + j + j;
       if (i === this._current) {
         title = '[' + title + ']';
-        menu.appendChild(TEXT(title));
-      } else if (enabled) {
+      }
+      if (enabled) {
         menu.appendChild(A_onclick(TEXT(title), function () {
           self._current = ii;
           self.displayCurrentFrame();
