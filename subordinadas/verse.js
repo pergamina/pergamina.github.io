@@ -5,7 +5,7 @@ let VERSES = {
     new Verse('se quedó a lavar sábanas y a cuidar a los hijos (porque)'),
     new Verse('ella también de niña quiso ser astronauta (para)'),
     new Verse('explorar otros mundos y sus eras geológicas (pero)'),
-    new Verse('cadenas invisibles la anclaron a la tierra (porque)'),
+    new Verse('cadenas invisibles la anclaron a la Tierra (porque)'),
     new Verse('sus padres le ordenaron, quizá benevolentes (que)'),
     new Verse('de aquel árbol prohibido no deberás comer (:)'),
     new Verse('las nenas no se meten en cosas de varones, (que)'),
