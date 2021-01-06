@@ -11,6 +11,16 @@ a {
   text-decoration: none;
   color: white;
 }
+#contents {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
 #menu {
   display: block;
   overflow: auto;
@@ -46,12 +56,13 @@ h1 {
   font-size: 20pt;
 }
 #body {
-  display: block;
-  overflow: auto;
+  flex: 1 1 auto;
+  display: flex;
   margin: 0 auto;
   width: 80%;
 }
 .vert {
+  flex: 1;
   display: grid;
   width: 100%;
 }
@@ -61,7 +72,7 @@ h1 {
 }
 .text {
   flex: 1;
-  margin: 5px; padding: 5px;
+  margin: 5px;
   background: black;
   color: white;
   display: flex;
@@ -69,7 +80,7 @@ h1 {
   justify-content: center;
 }
 .text p {
-  font-size: 1.8vw;
+  font-size: 20pt;
   vertical-align: middle;
 }
 .border {
