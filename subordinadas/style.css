@@ -1,0 +1,89 @@
+body {
+  font-size: 12pt;
+  overflow-y: scroll;
+  font-family: "Roboto Condensed", sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#menu {
+  display: block;
+  overflow: auto;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 28pt;
+  color: #e0e0e0;
+}
+#menu a {
+  text-decoration: underline;
+  color: white;
+}
+#menu .button {
+  background: gray;
+  color: white;
+  float: left;
+  padding: 10px;
+  margin: 5px;
+}
+#menu .button:hover {
+  background: red;
+  color: white;
+}
+#menu .visited.selected {
+  background: blue;
+  color: white;
+}
+#menu .visited {
+  background: gray;
+  color: darkgray;
+}
+h1 {
+  font-size: 20pt;
+}
+#body {
+  display: block;
+  overflow: auto;
+  margin: 0 auto;
+  width: 80%;
+}
+.vert {
+  display: grid;
+  width: 100%;
+}
+.horiz {
+  display: flex;
+  flex: 1;
+}
+.text {
+  flex: 1;
+  margin: 5px; padding: 5px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text p {
+  font-size: 1.8vw;
+  vertical-align: middle;
+}
+.border {
+  border: solid black 1px;
+  background: white;
+  color: black;
+}
+.button {
+  background: blue;
+}
+.button:hover {
+  background: red;
+  cursor: pointer;
+}
+.button a {
+  color: white;
+}
