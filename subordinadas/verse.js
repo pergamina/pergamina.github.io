@@ -173,7 +173,7 @@ let VERSES = {
     new Verse('"dinero" y "papel higiénico" (que)'),
     new Verse('no son sino nombres para el papel (pero)'),
     new Verse('determinan el modo en (que)'),
-    new Verse('los usaremos y por eso es violento (que)'),
+    new Verse('los usaremos y por eso (que)'),
     new Verse('no quieran llamarte "mujer" (aunque)'),
   ],
   '8': [
