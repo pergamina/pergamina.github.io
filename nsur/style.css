@@ -1,0 +1,47 @@
+
+body {
+  font-size: 18pt;
+  overflow-y: scroll;
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+  background: black;
+  color: white;
+  line-height: 1.1;
+}
+
+input {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 30pt;
+  border-width: 1px;
+}
+
+input[type=text] {
+  width: auto;
+  border: 0px;
+}
+
+input[type=text] {
+  width: 60%;
+}
+
+input[type=text].invalid {
+  border: solid red 2px;
+  background: #ffe0e0;
+}
+
+input[type=text].valid {
+  border: solid green 2px;
+  background: #e0ffe0;
+}
+
+input[type=button].invalid {
+  background: #ffe0e0;
+}
+
+input[type=button].valid {
+  background: #e0ffe0;
+}
+
+#captcha {
+  padding: 20px;
+}
