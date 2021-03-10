@@ -57,6 +57,7 @@ function select(i) {
   }
 
   let input = INPUT_TEXT();
+  input.placeholder = 'Escriba el texto';
   let btn = BUTTON('-', function () {});
   captcha.appendChild(input);
   captcha.appendChild(btn);
