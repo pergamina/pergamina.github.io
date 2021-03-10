@@ -8,7 +8,11 @@ function select(i) {
   let poem = _('poem');
   clearElem(poem);
   for (let j = 0; j < STATE[i]; j++) {
-    appendFirst(poem, P1(TEXT(VERSES[i][j])));
+    if (VERSES[i][j] === '') {
+      appendFirst(poem, BR());
+    } else {
+      appendFirst(poem, P1(TEXT(VERSES[i][j])));
+    }
   }
   let captcha = _('captcha');
   clearElem(captcha);
