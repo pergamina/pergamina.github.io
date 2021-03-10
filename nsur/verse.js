@@ -129,7 +129,7 @@ let VERSES = [
     "",
     "Vemos entonces la espesura abriéndose,",
     "el cielo azul traslúcido del claro.",
-    "A los lejos cargan bolsos señoras",
+    "A lo lejos cargan bolsos señoras",
     "con dos rostros que no conoceremos.",
     "",
     "Me remolcan hasta la pieza sola",
