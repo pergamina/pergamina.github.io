@@ -74,6 +74,7 @@ function select(i) {
           STATE[i] += 1;
         }
         img.src = img_name();
+        btn.onclick = function () {};
         btn.value = '-';
         btn.className = '';
         input.className = '';
