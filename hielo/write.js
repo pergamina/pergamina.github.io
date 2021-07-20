@@ -205,6 +205,7 @@ function main() {
 
   function put_poem(i) {
     let poem = _('poem');
+    clearElem(poem);
     for (let line of VERSES[i]) {
       poem.appendChild(TEXT(line));
       poem.appendChild(BR());
