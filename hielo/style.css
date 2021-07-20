@@ -1,0 +1,65 @@
+
+body {
+  font-size: 18pt;
+  overflow-y: scroll;
+  font-family: "Roboto Condensed", sans-serif;
+  background: white;
+  color: blue;
+  line-height: 1.1;
+}
+
+input {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 30pt;
+  border-width: 1px;
+  color: blue;
+}
+
+input:hover {
+  background: blue;
+  color: white;
+}
+
+.selected {
+  border: solid black 3px;
+  background: blue;
+  color: white;
+}
+
+#menu {
+  display: block;
+  width: 92%;
+}
+
+.translate {
+  margin-left: 5px;
+}
+
+#poems {
+  visibility: hidden;
+  display: table;
+  margin-top: 10px;
+  border: solid lightgray 2px;
+  border-radius: 5px;
+  box-shadow: 5px 5px gray;
+  float: left;
+  width: 90%;
+  text-align: left;
+}
+
+#tpoem {
+  display: table-cell;
+  color: blue;
+  width: 40%;
+  padding: 10px;
+}
+
+#poem {
+  display: table-cell;
+  color: blue;
+  background: #f0f0f0;
+  width: 40%;
+  padding: 10px;
+  border-left: solid lightgray 1px;
+}
+
