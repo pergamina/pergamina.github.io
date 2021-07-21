@@ -175,6 +175,8 @@ function main() {
   let translateButton = BUTTON('Traducir', function () {});
   let translationTable = buildTranslationTable();
 
+  let current_iter = 0;
+
   function put_tpoem(i) {
     let tpoem = _('tpoem');
     let upper = true;
@@ -227,15 +229,24 @@ function main() {
   }
 
   function put_poem(i) {
+    put_poem_cont(current_iter, i);
+  }
+
+  function put_poem_cont(iter, i) {
+    if (iter != current_iter) {
+      return;
+    }
     let poem = _('poem');
     clearElem(poem);
     for (let options of VERSES[i]) {
       poem.appendChild(TEXT(rc(options)));
       poem.appendChild(BR());
     }
+    setTimeout(function () { put_poem_cont(iter, i); }, 100);
   }
 
   function select(i) {
+    current_iter += 1;
     for (let j = 0; j < VERSES.length; j++) {
       menuButtons[j].className = '';
     }

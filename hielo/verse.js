@@ -2000,7 +2000,7 @@ let VERSES = [
     ],
     [
       "Miré para otro lado con la vista de hielo",
-      "Miro la vista de Bing desde la otra dirección",
+      "Miro la vista de hielo desde la otra dirección",
       "Vi la dirección opuesta en la vista del hielo",
       "Miré para otro lado con una vista de hielo",
       "Miré en la otra dirección con la vista de hielo",
