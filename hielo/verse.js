@@ -2470,7 +2470,7 @@ let VERSES = [
       "cogíamos formando geometrías concéntricas",
       "Teníamos sexo en geometrías concéntricas",
       "Hacíamos el amor en formas concéntricas.",
-      "capturamos la formación de geometría concéntrica",
+      "follábamos en geometrías concéntricas",
       "Teníamos sexo en geometría concéntrica.",
     ],
     [
