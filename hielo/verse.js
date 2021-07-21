@@ -1322,7 +1322,7 @@ let VERSES = [
     ],
     [
       "al esplendor del hielo blanco.",
-      "A la magnificencia de Baibing.",
+      "A la magnificencia del hielo blanco.",
       "Al esplendor del hielo blanco.",
       "al esplendor del hielo blanco.",
       "Al esplendor del hielo blanco.",
