@@ -259,6 +259,7 @@ function main() {
     clearElem(poem);
     put_tpoem(i);
     translateButton.onclick = function () {
+      current_iter += 1;
       put_poem(i);
     };
     translateButton.style.visibility = 'visible';
