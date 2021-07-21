@@ -39,6 +39,7 @@ input:hover {
   visibility: hidden;
   display: table;
   margin-top: 10px;
+  margin-bottom: 50px;
   border: solid lightgray 2px;
   border-radius: 5px;
   box-shadow: 5px 5px gray;
@@ -63,3 +64,16 @@ input:hover {
   border-left: solid lightgray 1px;
 }
 
+.word {
+}
+.word:hover {
+  background: lightgray;
+}
+.tooltip {
+  color: white;
+  background: #000080;
+  display: none;
+  position: absolute;
+  padding: 5px 10px 10px 10px;
+  border-radius: 10px;
+}

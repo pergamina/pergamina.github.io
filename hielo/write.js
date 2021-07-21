@@ -178,27 +178,50 @@ function main() {
   function put_tpoem(i) {
     let tpoem = _('tpoem');
     let upper = true;
+
+    clearElem(tpoem);
+
+    let tooltipText = TEXT('');
+    let tooltip = DIV('tooltip', [tooltipText]);
+    tpoem.appendChild(tooltip);
+
     for (let line of TVERSES[i]) {
-      let str = '';
       let first = true;
       for (let word of line) {
         if (symbol(word)) {
-          str += word;
+          tpoem.appendChild(TEXT(word));
           upper = (word == '.' || word == '?');
         } else {
           if (first) {
             first = false;
           } else {
-            str += ' ';
+            tpoem.appendChild(TEXT(' '));
           }
+          let str = '';
           for (let syl of word) {
             str += upper ? capitalize(translationTable[syl])
                          : translationTable[syl];
             upper = false;
           }
+          let meaning = KEY[list2key(word)];
+          let wordElem = SPAN1('', TEXT(str));
+          if (meaning != '') {
+            wordElem.className = 'word';
+            wordElem.onmouseover = function () {
+              console.log(wordElem.offsetHeight);
+              //tooltipText.textContent = word + ' ' + meaning;
+              tooltipText.textContent = meaning;
+              tooltip.style.display = 'block';
+              tooltip.style.left = wordElem.offsetLeft + 'px';
+              tooltip.style.top = wordElem.offsetTop + wordElem.offsetHeight + 'px';
+            };
+            wordElem.onmouseout = function () {
+              tooltip.style.display = 'none';
+            };
+          }
+          tpoem.appendChild(wordElem);
         }
       }
-      tpoem.appendChild(TEXT(str));
       tpoem.appendChild(BR());
     }
   }
@@ -206,8 +229,8 @@ function main() {
   function put_poem(i) {
     let poem = _('poem');
     clearElem(poem);
-    for (let line of VERSES[i]) {
-      poem.appendChild(TEXT(line));
+    for (let options of VERSES[i]) {
+      poem.appendChild(TEXT(rc(options)));
       poem.appendChild(BR());
     }
   }
