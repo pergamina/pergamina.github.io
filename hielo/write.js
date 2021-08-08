@@ -242,7 +242,7 @@ function main() {
       poem.appendChild(TEXT(rc(options)));
       poem.appendChild(BR());
     }
-    setTimeout(function () { put_poem_cont(iter, i); }, 100);
+    setTimeout(function () { put_poem_cont(iter, i); }, 500);
   }
 
   function select(i) {
