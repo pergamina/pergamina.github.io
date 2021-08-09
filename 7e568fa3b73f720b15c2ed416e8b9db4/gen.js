@@ -27,6 +27,13 @@ function random_weighted_choice(list) {
   return list[0];
 }
 
+function capitalize(x) {
+  if (x.length === 0) {
+    return x;
+  }
+  return x[0].toUpperCase() + x.substring(1, x.length);
+}
+
 // Given a list [[w1, x1], ..., [wn, xn]] shuffle it so that
 // xi comes before xj with greater probability if it has greater
 // weight.
@@ -529,7 +536,44 @@ class HaikuGenerator {
         }
       }
     }
-    return verses;
+    return this._naive_punctuate(verses);
+  }
+
+  _naive_punctuate(verses) {
+    if (verses.length !== 3) {
+      return verses;
+    }
+    if (Math.random() < 0.05) {
+      return verses;
+    }
+    let p0 = random_weighted_choice([
+               [500, ''], [500, ','], [10, ';'], [50, ':'], [100, '.'],
+               [5, '!'],
+             ]);
+    let p1 = random_weighted_choice([
+               [500, ''], [p0 !== '' ? 10 : 500, ','], [10, ';'], [50, ':'],
+               [100, '.'],
+             ]);
+    let p2 = random_weighted_choice([
+               [99, '.'],
+               [1, '...'],
+               [1, '!'],
+             ]);
+    let res = [];
+    let v0 = (p0 === '!' ? '¡' : '')
+           + capitalize(verses[0])
+           + (p0 === '!' ? '' : p0);
+    res.push(v0);
+    let v1 = p0 === '.' ? capitalize(verses[1]) : verses[1];
+    res.push(v1 + (p0 === '!' ? '!' : p1));
+    let v2 = (p0 === '!' || p1 === '.') ? capitalize(verses[2]) : verses[2];
+    if ((p0 === '!' || p1 === '.') && p2 === '!') {
+      v2 = '¡' + v2 + '!';
+    } else {
+      v2 = v2 + (p2 === '!' ? '.' : p2);
+    }
+    res.push(v2);
+    return res;
   }
 
   // Count verse length
