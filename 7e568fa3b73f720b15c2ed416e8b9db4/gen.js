@@ -540,7 +540,7 @@ class HaikuGenerator {
                                                       grammar, 'Start')) {
         let verse = this._parsetree_to_string(parsetree);
         if (this._verse_length(verse) === 5) {
-          verses.push(verse);
+          verses.push(this._phonetics.apply_contractions(verse));
         }
       }
     }
@@ -549,7 +549,7 @@ class HaikuGenerator {
                                                       grammar, 'Start')) {
         let verse = this._parsetree_to_string(parsetree);
         if (this._verse_length(verse) === 7) {
-          verses.push(verse);
+          verses.push(this._phonetics.apply_contractions(verse));
         }
       }
     }
@@ -558,7 +558,7 @@ class HaikuGenerator {
                                                       grammar, 'Start')) {
         let verse = this._parsetree_to_string(parsetree);
         if (this._verse_length(verse) === 5) {
-          verses.push(verse);
+          verses.push(this._phonetics.apply_contractions(verse));
         }
       }
     }

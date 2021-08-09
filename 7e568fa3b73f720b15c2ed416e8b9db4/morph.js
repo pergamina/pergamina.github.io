@@ -1069,7 +1069,7 @@ class LanguageMorphology {
       'galés': 'galesa', 'gratis': 'gratis', 'inglés': 'inglesa',
       'invasor': 'invasora', 'irlandés': 'irlandesa', 'japonés': 'japonesa',
       'parlanchín': 'parlanchina', 'soprano': 'soprano', 'tenor': 'soprano',
-      'trabajador': 'trabajadora',
+      'trabajador': 'trabajadora', 'volador': 'voladora',
     };
     if (root in exceptions) {
       return exceptions[root];

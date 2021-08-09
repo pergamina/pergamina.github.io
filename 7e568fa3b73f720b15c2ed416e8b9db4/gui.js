@@ -176,12 +176,13 @@ class GUI {
         row.appendChild(cell);
         cell.onclick = function () {
           if (self._matrix[i][j] === EMPTY && self._currentEmoji !== EMPTY) {
-            self._putMatrix(i, j, self._currentEmoji);
-            self._setCellImage(cell, self._currentEmoji);
             cell.classList.add('full');
             self._controlCells[self._currentEmoji].disable();
+            self._putMatrix(i, j, self._currentEmoji);
+            self._setCellImage(cell, self._currentEmoji);
             self._unselectEmoji();
           } else if (self._matrix[i][j] !== EMPTY) {
+            cell.classList.remove('full');
             self._controlCells[self._matrix[i][j]].enable();
             self._putMatrix(i, j, EMPTY);
             self._clearCellImage(cell);
