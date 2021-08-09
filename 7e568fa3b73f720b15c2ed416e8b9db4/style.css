@@ -58,12 +58,15 @@ table {
   flex: 1;
 }
 
-.control-cell {
+#control .control-cell {
   background: white;
+}
+
+#control.emoji-selected .control-cell, #control .control-cell.full {
   cursor: pointer;
 }
 
-.control-cell:hover {
+#control.emoji-selected .control-cell:hover, #control .control-cell.full:hover {
   background: lightgray;
 }
 

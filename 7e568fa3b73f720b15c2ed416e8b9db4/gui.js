@@ -55,11 +55,29 @@ class GUI {
     this._matrix = [[]];
     // Poem
     this._poemElem = poemElem;
+    this._allCells = [];
   }
 
   start() {
     this._createEmojiSelector(/*currentTab*/0);
     this._createControl();
+  }
+
+  _unselectEmoji() {
+    for (let c of this._allCells) {
+      c.classList.remove('selected');
+    }
+    this._currentEmoji = EMPTY;
+    this._controlElem.classList.remove('emoji-selected');
+  }
+
+  _selectEmoji(cellElem) {
+    for (let c of this._allCells) {
+      c.classList.remove('selected');
+    }
+    cellElem.classList.add('selected');
+    this._currentEmoji = cellElem.emojiNum;
+    this._controlElem.classList.add('emoji-selected');
   }
 
   _createEmojiSelector(currentTab) {
@@ -85,16 +103,6 @@ class GUI {
     }
     this._emojiSelectorElem.appendChild(buttons);
 
-    let allCells = [];
-
-    function selectEmoji(cellElem) {
-      for (let c of allCells) {
-        c.classList.remove('selected');
-      }
-      cellElem.classList.add('selected');
-      self._currentEmoji = cellElem.emojiNum;
-    }
-
     // Emoji selector buttons
     let table = document.createElement('table');
     let n = currentTab * numEmojisPerTab;
@@ -102,7 +110,7 @@ class GUI {
       let row = document.createElement('tr');
       for (let j = 0; j < width; j++) {
         let cell = document.createElement('td');
-        allCells.push(cell);
+        this._allCells.push(cell);
         cell.className = 'emoji-cell';
         cell.style.width = this._emojiTable.emojiWidth() + 'px';
         cell.style.height = this._emojiTable.emojiHeight() + 'px';
@@ -110,7 +118,7 @@ class GUI {
         cell.style.backgroundPosition = this._emojiPosition(n);
         cell.emojiNum = n;
         cell.onclick = function () {
-          selectEmoji(cell);
+          self._selectEmoji(cell);
         };
         // begin debug
         cell.onmouseover = function () {
@@ -124,7 +132,7 @@ class GUI {
       }
       table.appendChild(row);
     }
-    selectEmoji(allCells[0]);
+    self._unselectEmoji();
     this._emojiSelectorElem.appendChild(table);
   }
 
@@ -155,10 +163,12 @@ class GUI {
         cell.style.height = this._emojiTable.emojiHeight() + 'px';
         row.appendChild(cell);
         cell.onclick = function () {
-          if (self._matrix[i][j] === EMPTY) {
+          if (self._matrix[i][j] === EMPTY && self._currentEmoji !== EMPTY) {
             self._putMatrix(i, j, self._currentEmoji);
             self._setCellImage(cell, self._currentEmoji);
-          } else {
+            cell.classList.add('full');
+            self._unselectEmoji();
+          } else if (self._matrix[i][j] !== EMPTY) {
             self._putMatrix(i, j, EMPTY);
             self._clearCellImage(cell);
           }
