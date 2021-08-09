@@ -154,30 +154,13 @@ class GUI {
         cell.style.width = this._emojiTable.emojiWidth() + 'px';
         cell.style.height = this._emojiTable.emojiHeight() + 'px';
         row.appendChild(cell);
-        cell.onmouseover = function () {
-          if (self._matrix[i][j] === EMPTY) {
-            self._setCellImagePreview(cell, self._currentEmoji);
-          } else {
-            self._setCellImagePreview(cell, self._matrix[i][j]);
-          }
-        };
         cell.onclick = function () {
           if (self._matrix[i][j] === EMPTY) {
             self._putMatrix(i, j, self._currentEmoji);
             self._setCellImage(cell, self._currentEmoji);
-          } else if (self._matrix[i][j] === self._currentEmoji) {
-            self._putMatrix(i, j, EMPTY);
-            self._clearCellImage(cell);
           } else {
             self._putMatrix(i, j, EMPTY);
-            self._setCellImagePreview(cell, self._currentEmoji);
-          }
-        };
-        cell.onmouseout = function () {
-          if (self._matrix[i][j] === EMPTY) {
             self._clearCellImage(cell);
-          } else {
-            self._setCellImage(cell, self._matrix[i][j]);
           }
         };
       }

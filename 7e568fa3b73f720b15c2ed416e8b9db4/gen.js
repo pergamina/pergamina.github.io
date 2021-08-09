@@ -438,8 +438,6 @@ class HaikuGenerator {
 
   _naive_generate(matrix) {
     let word_selector = this._create_word_selector(matrix);
-    let w_NounPhrase_Det = 1 + randrange(5);
-    let w_NounPhrase_Undet = 1 + randrange(5);
     let grammar = cfg_expand({
       'Start': [
         'MinorSentence',
@@ -447,21 +445,34 @@ class HaikuGenerator {
       ],
       'MinorSentence': [
         'NounPhrase.gs.ns',
+        'Preposition NounPhrase.gs.ns',
       ],
       'MajorSentence': [
         'NounPhrase.gs.ns VT.#3.ns NounPhrase.go.no',
         'NounPhrase.gs.ns VI.#3.ns',
+        'VI.#3.ns NounPhrase.gs.ns',
         'NounPhrase.gs.ns VPRNL.#3.ns',
       ],
       'NounPhrase.g.n': [
-        [w_NounPhrase_Det, 'DetArt.g.n N.g.n'],
-        [w_NounPhrase_Det, 'DetArt.g.n ADJ.g.n N.g.n'],
-        [w_NounPhrase_Det, 'DetArt.g.n N.g.n ADJ.g.n'],
-        [w_NounPhrase_Undet, 'UndetArt.g.n N.g.n'],
-        [w_NounPhrase_Undet, 'UndetArt.g.n N.g.n ADJ.g.n'],
+        'N.g.n de N.g2.n2',
+        'ADJ.g.n N.g.n',
+        'N.g.n ADJ.g.n',
+        'DetArt.g.n N.g.n',
+        'DetArt.g.n ADJ.g.n N.g.n',
+        'DetArt.g.n N.g.n ADJ.g.n',
+        'UndetArt.g.n N.g.n',
+        'UndetArt.g.n N.g.n ADJ.g.n',
+        'UndetArt.g.n ADJ.g.n N.g.n',
+        'PossPron.g.n N.g.n',
+        'PossPron.g.n N.g.n ADJ.g.n',
+        'PossPron.g.n ADJ.g.n N.g.n',
       ],
       'NounPhrase.g.#s': [
         'NPROP.g',
+      ],
+      'Preposition': [
+        'bajo', 'con', 'contra', 'desde', 'en', 'entre', 'hacia', 'hasta',
+        'para', 'sin', 'sobre', 'tras',
       ],
       'DetArt.#m.#s': ['el'],
       'DetArt.#m.#p': ['los'],
@@ -471,6 +482,10 @@ class HaikuGenerator {
       'UndetArt.#m.#p': ['unos'],
       'UndetArt.#f.#s': ['una'],
       'UndetArt.#f.#p': ['unas'],
+      'PossPron.#m.#s': ['mi', 'tu', 'nuestro'],
+      'PossPron.#m.#p': ['mis', 'tus', 'nuestros'],
+      'PossPron.#f.#s': ['mi', 'tu', 'nuestra'],
+      'PossPron.#f.#p': ['mis', 'tus', 'nuestras'],
     });
 
     // Tense is given by the horizontal balance factor.
