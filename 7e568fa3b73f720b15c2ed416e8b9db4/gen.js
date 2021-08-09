@@ -266,6 +266,32 @@ class HaikuGenerator {
 
   _test(matrix) {
 
+    //// Show the stress pattern of a verse
+    let phon = new LanguagePhonetics();
+    let res = [];
+    res.push(
+      phon.apply_contractions('de el médico')
+    );
+    res.push(
+      phon.apply_contractions('a el médico')
+    );
+    res.push(
+      phon.apply_contractions('el médico')
+    );
+    res.push(
+      phon.apply_contractions('la águila')
+    );
+    res.push(
+      phon.apply_contractions('la acción')
+    );
+    res.push(
+      phon.apply_contractions('de la aire')
+    );
+    res.push(
+      phon.apply_contractions('a la hacha')
+    );
+    return res;
+
     /*
     //// Generate sentences from a context-free grammar with generators
     let word_selector = this._create_word_selector(matrix);

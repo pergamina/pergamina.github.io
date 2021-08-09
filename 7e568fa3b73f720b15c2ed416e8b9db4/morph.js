@@ -978,7 +978,7 @@ class LanguageMorphology {
       'té': 'tés', 'whisky': 'whiskies', 'zenit': 'zenits',
       'escocés': 'escoceses', 'francés': 'franceses', 'galés': 'galeses',
       'inglés': 'ingleses', 'irlandés': 'irlandeses', 'japonés': 'japoneses',
-      'compás': 'compases',
+      'interés': 'intereses', 'compás': 'compases',
     };
     if (root in exceptions) {
       return exceptions[root];

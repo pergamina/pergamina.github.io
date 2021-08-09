@@ -55,16 +55,17 @@ class GUI {
     this._matrix = [[]];
     // Poem
     this._poemElem = poemElem;
-    this._allCells = [];
+    this._controlCells = [];
   }
 
   start() {
+    this._createControlCells();
     this._createEmojiSelector(/*currentTab*/0);
     this._createControl();
   }
 
   _unselectEmoji() {
-    for (let c of this._allCells) {
+    for (let c of this._controlCells) {
       c.classList.remove('selected');
     }
     this._currentEmoji = EMPTY;
@@ -72,12 +73,41 @@ class GUI {
   }
 
   _selectEmoji(cellElem) {
-    for (let c of this._allCells) {
+    for (let c of this._controlCells) {
       c.classList.remove('selected');
     }
     cellElem.classList.add('selected');
     this._currentEmoji = cellElem.emojiNum;
     this._controlElem.classList.add('emoji-selected');
+  }
+
+  _createControlCells() {
+    let self = this;
+    for (let n = 0; n < this._emojiTable.numEmojis(); n++) {
+      let cell = document.createElement('td');
+      this._controlCells.push(cell);
+      cell.className = 'emoji-cell';
+      cell.style.width = this._emojiTable.emojiWidth() + 'px';
+      cell.style.height = this._emojiTable.emojiHeight() + 'px';
+      cell.emojiNum = n;
+      cell.onclick = function () {
+        if (cell.enabled) {
+          self._selectEmoji(cell);
+        }
+      };
+      cell.disable = function () {
+        cell.enabled = false;
+        cell.style.backgroundImage = '';
+        cell.classList.remove('enabled');
+      };
+      cell.enable = function () {
+        cell.enabled = true;
+        cell.style.backgroundImage = 'url("emoji.png")';
+        cell.style.backgroundPosition = self._emojiPosition(n);
+        cell.classList.add('enabled');
+      };
+      cell.enable();
+    }
   }
 
   _createEmojiSelector(currentTab) {
@@ -109,25 +139,7 @@ class GUI {
     for (let i = 0; i < height; i++) {
       let row = document.createElement('tr');
       for (let j = 0; j < width; j++) {
-        let cell = document.createElement('td');
-        this._allCells.push(cell);
-        cell.className = 'emoji-cell';
-        cell.style.width = this._emojiTable.emojiWidth() + 'px';
-        cell.style.height = this._emojiTable.emojiHeight() + 'px';
-        cell.style.backgroundImage = 'url("emoji.png")';
-        cell.style.backgroundPosition = this._emojiPosition(n);
-        cell.emojiNum = n;
-        cell.onclick = function () {
-          self._selectEmoji(cell);
-        };
-        // begin debug
-        cell.onmouseover = function () {
-          let numElem = document.getElementById('number');
-          clearElem(numElem);
-          numElem.appendChild(TEXT(cell.emojiNum));
-        };
-        // end debug
-        row.appendChild(cell);
+        row.appendChild(this._controlCells[n]);
         n += 1;
       }
       table.appendChild(row);
@@ -167,8 +179,10 @@ class GUI {
             self._putMatrix(i, j, self._currentEmoji);
             self._setCellImage(cell, self._currentEmoji);
             cell.classList.add('full');
+            self._controlCells[self._currentEmoji].disable();
             self._unselectEmoji();
           } else if (self._matrix[i][j] !== EMPTY) {
+            self._controlCells[self._matrix[i][j]].enable();
             self._putMatrix(i, j, EMPTY);
             self._clearCellImage(cell);
           }
@@ -188,12 +202,6 @@ class GUI {
     cell.style.backgroundImage = '';
     cell.style.backgroundPosition = '';
     cell.style.opacity = 1;
-  }
-
-  _setCellImagePreview(cell, n) {
-    cell.style.backgroundImage = 'url("emoji.png")';
-    cell.style.backgroundPosition = this._emojiPosition(n);
-    cell.style.opacity = 0.5;
   }
 
   _setCellImage(cell, n) {

@@ -542,5 +542,42 @@ class LanguagePhonetics {
     return count;
   }
 
+  // E.g.
+  //   "de el águila" -> "del águila"
+  apply_contractions(verse) {
+    let self = this;
+    function tonic_a(word) {
+      let syls = self.word_to_syllables(word);
+      return syls.length > 0
+          && syls[0].length > 0
+          && syls[0][0] === 'A';
+    }
+    let res = [];
+    let words = verse.split(' ');
+    let n = words.length;
+    let next = '';
+    for (let i = n - 1; i >= 0; i--) {
+      let word = words[i];
+      // Feminine article followed by tonic 'a'
+      if (word == 'la' && tonic_a(next)) {
+        word = 'el';
+      } else if (word == 'una' && tonic_a(next)) {
+        word = 'un';
+      }
+      // Contractions
+      if (word == 'de' && next == 'el') {
+        res.shift();
+        res.unshift('del');
+      } else if (word == 'a' && next == 'el') {
+        res.shift();
+        res.unshift('al');
+      } else {
+        res.unshift(word);
+      }
+      next = res[0];
+    }
+    return res.join(' ');
+  }
+
 }
 

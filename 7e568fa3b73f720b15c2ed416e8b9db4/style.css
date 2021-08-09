@@ -19,6 +19,11 @@ h1 {
 
 #contents {
   margin: 5px;
+  position: absolute;
+  width: 600px;
+  margin-left: -300px;
+  top: 0;
+  left: 50%;
 }
 
 #control {
@@ -84,11 +89,14 @@ table {
 }
 
 .emoji-cell {
-  cursor: pointer;
   background: lightgray;
 }
 
-.emoji-cell:hover {
+.emoji-cell.enabled {
+  cursor: pointer;
+}
+
+.emoji-cell.enabled:hover {
   background: white;
 }
 
