@@ -121,18 +121,7 @@ table {
   flex: 1;
   cursor: pointer;
   border: solid lightgray 1px;
-}
-
-#clear_btn {
-  background-image: url("clear_btn.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#share_btn {
-  background-image: url("share_btn.png");
-  background-repeat: no-repeat;
-  background-position: center;
+  font-weight: bold;
 }
 
 .shareBox {
