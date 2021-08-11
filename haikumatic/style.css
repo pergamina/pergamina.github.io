@@ -1,0 +1,160 @@
+
+body {
+  font-size: 18pt;
+  font-family: monospace;
+  overflow-y: scroll;
+  background: white;
+  line-height: 1.1;
+  margin: 0;
+  background: lightgray;
+}
+
+h1 {
+  font-size: 14pt;
+  background: #000080;
+  color: white;
+  margin: 0;
+  padding: 2px;
+}
+
+#contents {
+  margin: 5px;
+  position: absolute;
+  width: 600px;
+  margin-left: -300px;
+  top: 0;
+  left: 50%;
+}
+
+#control {
+  max-width: 300px;
+}
+
+#poem_container {
+  margin-left: 5px;
+  width: 200px;
+  height: 205px;
+}
+
+#poem {
+  font-family: "Times New Roman", serif;
+  font-size: 20pt;
+  margin: 0;
+  padding: 10px;
+  background: white;
+  border: solid darkgray 1px;
+  height: 150px;
+}
+
+#options {
+  display: flex;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-spacing: 0;
+}
+
+#control {
+  display: flex;
+  flex: 1;
+}
+
+#emoji {
+  flex: 1;
+}
+
+.vert {
+  flex: 1;
+  display: grid;
+}
+
+.horiz {
+  display: flex;
+  flex: 1;
+}
+
+#control .control-cell {
+  background: white;
+}
+
+#control.emoji-selected .control-cell, #control .control-cell.full {
+  cursor: pointer;
+}
+
+#control.emoji-selected .control-cell:hover, #control .control-cell.full:hover {
+  background: lightgray;
+}
+
+.tab-button {
+  width: 98px;
+  font-weight: bold;
+  background: lightgray;
+  border: solid darkgray 1px;
+  cursor: pointer;
+}
+
+.tab-button.selected {
+  background: white;
+  border: solid black 2px;
+}
+
+.emoji-cell {
+  background: lightgray;
+}
+
+.emoji-cell.enabled {
+  cursor: pointer;
+}
+
+.emoji-cell.enabled:hover {
+  background: white;
+}
+
+.emoji-cell.selected {
+  background: white;
+}
+
+#clear_btn, #share_btn {
+  flex: 1;
+  cursor: pointer;
+  border: solid lightgray 1px;
+}
+
+#clear_btn {
+  background-image: url("clear_btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#share_btn {
+  background-image: url("share_btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shareBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0.8;
+  background: #008000;
+  padding-top: 25%;
+}
+
+.shareBox input {
+  font-size: 32pt;
+  width: 100%;
+}
+
+.shareBox input[type="button"] {
+  padding: 5px;
+  color: white;
+  background: black;
+  border: 0;
+}
