@@ -1,0 +1,290 @@
+
+body {
+  overflow-y: scroll;
+  line-height: 1.1;
+  margin: 0;
+  overflow: horizontal;
+  font-family: sans-serif;
+}
+
+.contacts {
+  position: fixed;
+  left: 0;
+  float: left;
+  width: 30%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.contact {
+  position: relative;
+  background: white;
+  width: 100%;
+  height: 60px;
+  border-left: 0;
+  border-top: solid transparent 1px;
+  border-right: 0;
+  border-bottom: solid lightgray 1px;
+  line-height: 60px;
+}
+
+.contact:hover {
+  background: #e0e0e0;
+  cursor: pointer;
+}
+
+.contact.selected {
+  background: #4040a0;
+}
+
+.contact-picture {
+  font-size: 18pt;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: #a0a080;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  margin: 5px 8px 5px 2px;
+}
+
+.col0 { background: #b23535 }
+.col1 { background: #b28035 }
+.col2 { background: #99b235 }
+.col3 { background: #4eb235 }
+.col4 { background: #35b267 }
+.col5 { background: #35b2b2 }
+.col6 { background: #3567b2 }
+.col7 { background: #4e35b2 }
+.col8 { background: #9935b2 }
+.col9 { background: #b23580 }
+
+.contact-name {
+  font-size: 12pt;
+  font-weight: bold;
+  color: black;
+  height: 20px;
+  float: top;
+  margin-top: 10px;
+  line-height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.contact.selected .contact-name {
+  color: white;
+}
+
+.contact-status {
+  font-size: 12pt;
+  height: 20px;
+  float: bottom;
+  line-height: 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.contact.selected .contact-status {
+  color: white;
+}
+
+.interaction {
+  position: fixed;
+  top: 0;
+  right: 0;
+  float: right;
+  width: 70%;
+  height: 100%;
+  border-left: solid lightgray 2px; 
+}
+
+.chat {
+  height: 100%;
+  display: flex;
+}
+
+.chat-title {
+  font-size: 16pt;
+  background: #202080;
+  color: white;
+  height: 50px;
+  line-height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat-title-status {
+  font-size: 10pt;
+  color: white;
+  line-height: 15px;
+  font-weight: normal;
+}
+
+.chat-input {
+  height: 50px;
+  background: white;
+  border-top: solid lightgray 1px;
+}
+
+.chat-input input[type=text] {
+  border: 0;
+  background: white;
+  height: 50px;
+  width: calc(100% - 70px);
+  font-size: 18pt;
+}
+
+.chat-input input[type=button] {
+  width: 0;
+  height: 0;
+  float: right;
+  color: white;
+  line-height: 50px;
+  font-size: 30pt;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 30px solid #202080;
+  margin: 10px;
+}
+
+.chat-text {
+  overflow: hidden;
+  overflow-y: auto;
+  background: #e0e0e0;
+  height: calc(100% - 130px);
+  display: flex;
+  flex-direction: column;
+}
+
+.message-wrapper {
+  display: column;
+  width: 100%;
+}
+
+.message-self, .message-other {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 16px;
+  border-bottom: solid #808080 2px;
+}
+
+.message-self {
+  background: #a0f0a0;
+  float: right;
+}
+
+.message-other {
+  background: #ffffff;
+  float: left;
+}
+
+.message-time {
+  font-size: 10pt;
+  padding-top: 3px;
+  text-align: right;
+}
+
+.message-other .message-time {
+  color: gray;
+}
+
+.message-self .message-time {
+  color: #008000;
+}
+
+.contact .contact-status {
+  font-size: 12pt;
+}
+
+.contact .contact-status .status-text {
+  color: gray;
+}
+.contact.selected .contact-status .status-text {
+  color: white;
+}
+.contact .contact-status .status-notification {
+  color: #2080d0;
+}
+.contact.selected .contact-status .status-notification {
+  color: white;
+}
+
+.contact .contact-status .status-sent {
+  width: 10px;
+  height: 10px;
+  color: #2080d0;
+  padding-right: 4px;
+}
+
+.contact.selected .contact-status .status-sent {
+  color: white;
+}
+
+.contact .contact-status .status-count {
+  position: absolute;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  right: 10px;
+  top: calc(75% - 12.5px);
+  background: #2080d0;
+  color: white;
+  border-radius: 50%;
+}
+
+.init {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  padding: 20px;
+  background: white;
+  text-align: center;
+}
+
+.init table {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.init td {
+  padding: 10px;
+  border: solid lightgray 1px;
+}
+
+.init input[type=text] {
+  width: 300px;
+}
+
+.init input[type=text].bad {
+  border: solid red 2px;
+  background: #f0e0e0;
+}
+
+.init input[type=button] {
+  font-weight: bold;
+  margin: 20px;
+}
+
