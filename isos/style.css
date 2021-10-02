@@ -1,0 +1,24 @@
+
+body {
+  font-size: 18pt;
+  overflow-y: scroll;
+  font-family: "Roboto Condensed", sans-serif;
+  background: white;
+  color: black;
+  line-height: 1.1;
+  margin: 0;
+}
+#contents {
+  padding: 10px;
+}
+#poem {
+  display: block;
+  float: left;
+  width: 60%;
+}
+#control {
+  font-size: 18pt;
+  display: block;
+  float: right;
+  width: 40%;
+}
