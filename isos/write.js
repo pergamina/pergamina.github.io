@@ -451,8 +451,7 @@ function main() {
     ["slide_replacements_wrap", slide, 0, 100],
     ["slide_dispress", slide, 0, 100],
   ];
-  //for (let s of shuffle(more_sliders)) {
-  for (let s of more_sliders) {
+  for (let s of shuffle(more_sliders)) {
     sliders.push(s);
   }
   for (let [slider_id, slider_action, slider_min, slider_max] of sliders) {
