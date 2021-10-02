@@ -2,6 +2,10 @@
 let RNG = new RandomNumberGenerator();
 let SEED = Math.floor(Math.random() * 0xfffffff);
 
+function replaceAll(str, source, target) {
+  return str.split(source).join(target);
+}
+
 function randrange(n) {
   return Math.floor(Math.random() * n);
 }
