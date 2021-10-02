@@ -383,7 +383,7 @@ function slide_letterform(poem) {
 }
 
 function slide_wrap(poem) {
-  let p = _('slide_letterform_whitespace').value;
+  let p = _('slide_wrap').value;
   if (p == 100) {
     return poem;
   }
@@ -450,6 +450,7 @@ function main() {
     ["slide_erase_verses", slide, 0, 100],
     ["slide_replacements_wrap", slide, 0, 100],
     ["slide_dispress", slide, 0, 100],
+    ["slide_wrap", slide, 0, 100],
   ];
   for (let s of shuffle(more_sliders)) {
     sliders.push(s);
