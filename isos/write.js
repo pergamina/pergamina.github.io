@@ -383,7 +383,7 @@ function slide_letterform(poem) {
 }
 
 function slide_wrap(poem) {
-  let p = _('slide_replacements_wrap').value;
+  let p = _('slide_letterform_whitespace').value;
   if (p == 100) {
     return poem;
   }
