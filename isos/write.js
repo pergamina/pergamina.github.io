@@ -273,10 +273,10 @@ function fix_punctuation(poem) {
   }
 
   for (let i = 0; i < poem.length; i++) {
-    if (i == 0 || ends_sentence(poem[i - 1][poem[i - 1].length - 1])) {
+    if (i == 0 || (poem[i - 1].length > 0 && ends_sentence(poem[i - 1][poem[i - 1].length - 1]))) {
       poem[i] = capitalize(poem[i]);
     }
-    if (i == poem.length - 1 || is_upper(poem[i + 1][0])) {
+    if (i == poem.length - 1 || (poem[i + 1].length > 0 && is_upper(poem[i + 1][0]))) {
       poem[i] = add_period(poem[i]);
     }
   }
