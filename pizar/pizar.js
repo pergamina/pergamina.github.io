@@ -270,7 +270,8 @@ function main() {
     }
     G_prefixTree.insert(word);
   }
+  _('input').value = random_choice(REPO);
+  _('input').setSelectionRange(0, _('input').value.length);
   _('input').focus();
-  _('input').select(); 
 }
 
