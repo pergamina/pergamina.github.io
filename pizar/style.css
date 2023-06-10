@@ -1,0 +1,39 @@
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18pt;
+  line-height: 1.1;
+}
+
+textarea {
+  font-family: "Roboto", sans-serif;
+  font-size: 18pt;
+  width: 30em;
+  height: 8em;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+  font-size: 18pt;
+}
+
+#clean_output {
+  margin: 10px;
+}
+
+#output {
+  margin: 10px;
+}
+
+#bad_slider {
+  visibility: hidden;
+}
+
+.bad {
+  color: black;
+  background: #080808;
+}
+
+.good {
+  color: black;
+}
