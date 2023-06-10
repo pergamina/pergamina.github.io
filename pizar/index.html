@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="author" content="Pergamina">
+    <meta name="description" content="Isos">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" type="text/css" rel="stylesheet">
+    <title>Pizar</title>
+    <script type="text/javascript" src="dom.js"></script>
+    <script type="text/javascript" src="lex.js"></script>
+    <script type="text/javascript" src="pizar.js"></script>
+    <style type="text/css" rel="style.css"></style>
+  </head>
+  <body onload="main()">
+    <div id="contents">
+      <div id="orig">
+        <textarea id="input" placeholder="Escribí el texto que quieras pizar">Si (como afirma el griego en el Cratilo)
+el nombre es arquetipo de la cosa
+en las letras de 'rosa' está la rosa
+y todo el Nilo en la palabra 'Nilo'.</textarea>
+        <br>
+        <br>
+        <input type="button" value="Pizar!" onclick="pizar()">
+      </div>
+      <input id="line_slider" type="range" min="0" max="30" value="10" style="width:30em">
+      <input id="bad_slider" type="range" min="0" max="100" value="95" style="width:30em" oninput="adjust_bad_color()">
+      <div id="output">
+      </div>
+    </div>
+  </body>
+</html>
