@@ -273,5 +273,6 @@ function main() {
   _('input').value = random_choice(REPO);
   _('input').setSelectionRange(0, _('input').value.length);
   _('input').focus();
+  pizar();
 }
 
