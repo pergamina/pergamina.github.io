@@ -12,16 +12,18 @@ textarea {
   height: 8em;
 }
 
-input {
+input[type=button] {
   font-family: "Roboto", sans-serif;
-  font-size: 18pt;
+  font-size: 30pt;
+  width: 10em;
 }
 
-#clean_output {
-  margin: 10px;
+input[type=range] {
+  height: 50px;
 }
 
 #output {
+  font-size: 25pt;
   margin: 10px;
 }
 
